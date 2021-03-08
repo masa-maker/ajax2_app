@@ -1,10 +1,16 @@
-<h1>top page</h1> 
-<%= link_to "新規投稿", "/posts/new" %>
-<% @posts.each do |post|%>
-<div clacc="post">
-  <div class="post-date">
-    <%= post.content%>
-    <%= post.created_at%>
+<div class="container"> 
+  <h1 class="toph1">Ajax2App</h1>
+  <%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+    <%= form.text_field :content, class:"form-control"%>
+    <%= form.submit '投稿する' , id: "submit", class:"btn btn-primary"%>
+  <% end %>
+  <%= link_to "新規投稿", "/posts/new" %>
+  <% @posts.each do |post|%>
+  <div class="post">
+  <%= post.content%>
+    <div class="post-date">
+      <%= post.created_at%>
+    </div>
   </div>
+  <% end %>
 </div>
-<% end %>
