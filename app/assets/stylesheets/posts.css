@@ -43,3 +43,7 @@
 .post-date {
   font-size: 8px;
 }
+
+div[data-check="true"] {
+  background: #585555;
+}
